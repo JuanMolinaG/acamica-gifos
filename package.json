@@ -1,0 +1,17 @@
+{
+  "name": "develop",
+  "version": "1.0.0",
+  "description": "Develop files for GifOS proyect",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan G. Molina",
+  "license": "ISC"
+}
