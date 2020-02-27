@@ -1,14 +1,14 @@
-import { task, src, dest, watch, series } from 'gulp';
-import sass, { logError } from 'gulp-sass';
-import autoprefixer from 'gulp-autoprefixer';
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
-task('sass', function () {
-    return src('./src/scss/**/*.scss')
-      .pipe(sass().on('error', logError))
+gulp.task('sass', function () {
+    return gulp.src('./src/scss/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
       .pipe(autoprefixer())
-      .pipe(dest('./public/css'));
+      .pipe(gulp.dest('./public/css'));
 });
 
-task('default', function () {
-    watch('./src/scss/**/*.scss', series('sass'));
+gulp.task('default', function () {
+    gulp.watch('./src/scss/**/*.scss', gulp.series('sass'));
 });
