@@ -1,5 +1,5 @@
 {
-  "name": "develop",
+  "name": "develop-gifos",
   "version": "1.0.0",
   "description": "Develop files for GifOS proyect",
   "main": "index.js",
@@ -13,5 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Juan G. Molina",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": [
+    "> 0.2%, last 2 versions, not dead"
+  ]
 }
