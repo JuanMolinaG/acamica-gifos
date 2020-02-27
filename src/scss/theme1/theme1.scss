@@ -1,0 +1,12 @@
+@import '_variables.scss';
+@import 'mixins.scss';
+
+.sailor-day{
+    background-color: $body-color;
+    .title-bar{
+        @include top-bar(no-shadow, bold, 14px);
+    }
+    .title-bar.top-bar{
+        @include top-bar(shadow, normal, 12px);
+    }
+}

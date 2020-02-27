@@ -1,0 +1,15 @@
+@mixin top-bar ($box-shadow, $bold, $font-size) {
+    background-image: linear-gradient(270deg, $primary-color 0%, $secondary-color 100%);
+    @if $box-shadow == 'shadow' {
+        box-shadow: 0 1px 0 0 #110038;
+    }
+    span{
+        font-size: $font-size;
+        color: #FFF;
+        @if $bold == 'bold'{
+            font-weight: 700;
+        }@else{
+            font-weight: 400;
+        }
+    }
+}
