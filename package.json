@@ -4,9 +4,10 @@
   "description": "Develop files for GifOS proyect",
   "main": "index.js",
   "dependencies": {
-    "gulp-autoprefixer": "^7.0.1",
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2"
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
   },
   "devDependencies": {},
   "scripts": {
