@@ -3,10 +3,45 @@
 
 .sailor-day{
     background-color: $body-color;
-    .title-bar{
-        @include top-bar(no-shadow, bold, 14px);
+    .top-bar{
+        @include top-bar(12px, $box-shadow: true, $bold: false);
+        margin: 1px 1px 35px 1px;
+        padding: 3px 7px;
     }
-    .title-bar.top-bar{
-        @include top-bar(shadow, normal, 12px);
+    .btn-primary{
+        @include button-type('primary');
+        & > img{
+            opacity: 1;
+        }
+    }
+    .btn-secondary{
+        @include button-type('secondary');
+    }
+    .btn-recording{
+        @include button-type('recording');
+    }
+    .btn-disabled{
+        @include button-type('disabled');
+        & > img{
+            opacity: 0.2;
+        }
+    }
+    .title-bar{
+        @include top-bar(14px, $box-shadow: false, $bold: true);
+        margin-bottom: 12px;
+        padding: 3px;
+    }
+    .my-gifos:hover{
+        outline: 1px dashed #110038;
+        outline-offset: 0px;
+        padding: 7px 19px 7px 1px;
+        margin: 0 -19px 0 -1px;
+    }
+    .container-box{
+        background: $box-bg;
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+        .search-form{
+            
+        }
     }
 }

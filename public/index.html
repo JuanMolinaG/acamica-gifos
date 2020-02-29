@@ -11,7 +11,7 @@
 </head>
 <body class="sailor-day">
     <header>
-        <div class="title-bar top-bar">
+        <div class="top-bar">
             <span>¡Bienvenidos/as a Gifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</span>
         </div>
         <nav class="nav-bar">
@@ -19,27 +19,24 @@
                 <img src="./assets/img/gifos_logo.png" alt="Logo gifos">
             </div>
             <div class="navigation-container">
-                <a href="#" class="btn btn-primary btn-big">Crear Gifos</a>
-                <label for="themeChanger">
-                    <span>Elegir tema</span>
-                </label>
-                <select name="themeChanger" id="themeChanger" class="btn btn-primary btn-big">
-                    <option value="sailor-day">Sailor Day</option>
-                    <option value="sailor-night">Sailor Night</option>
-                </select>
-                <a href="#" class="btn btn-primary btn-big">Mis Gifos</a>
+                <a href="#" class="btn-primary btn-xl">Crear Gifos</a><!--
+             --><div class="theme-changer">
+                    <span class="btn-primary btn-lg">Elegir tema</span><!--
+                 --><span class="btn-primary btn-arrow"><img src="./assets/img/dropdown.svg" alt="Flecha hacia abajo"></span>
+                </div><!--
+             --><a href="#" class="my-gifos">Mis Gifos</a>
             </div>
         </nav>
     </header>
     <div class="container">
         <section class="search-section">
-            <div class="search-container">
+            <div class="search-container container-box">
                 <div class="title-bar">
                     <span>Buscar</span>
                 </div>
-                <form action="#">
+                <form action="#" class="search-form">
                     <input type="text" name="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-                    <button type="submit"><img src="./assets/img/lupa.svg" alt="lupa">Buscar</button>
+                    <button type="submit" class="btn-md btn-disabled"><img src="./assets/img/lupa.svg" alt="lupa">Buscar</button>
                 </form>
             </div>
         </section>

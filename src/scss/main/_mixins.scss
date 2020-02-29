@@ -1,0 +1,18 @@
+@mixin button-size($font-size, $button-size) {
+    text-align: center;
+    font-size: $font-size;
+    cursor: pointer;
+    @if $button-size == 'sm' {
+        width: 81px;
+        padding: 8px 0;
+    } @else if $button-size == 'md' {
+        width: 102px;
+        padding: 9px 0;
+    } @else if $button-size == 'lg' {
+        width: 131px;
+        padding: 9px 0;
+    } @else if $button-size == 'xl' {
+        width: 144px;
+        padding: 9px 0;
+    }
+}

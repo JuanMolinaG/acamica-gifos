@@ -1,7 +1,58 @@
-.title-bar {
+.title-bar, .top-bar {
   height: 24px;
-  margin: 1px 1px 35px 1px;
-  padding: 3px 7px;
+}
+
+.btn-sm {
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  width: 81px;
+  padding: 8px 0;
+}
+
+.btn-md {
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width: 102px;
+  padding: 9px 0;
+}
+
+.btn-lg {
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width: 131px;
+  padding: 9px 0;
+}
+
+.btn-xl {
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width: 144px;
+  padding: 9px 0;
+}
+
+.btn-arrow {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 38px;
+  height: 38px;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+.btn-arrow img {
+  display: block;
+}
+
+.container-box {
+  padding: 2px;
 }
 
 * {
@@ -17,6 +68,10 @@
   text-decoration: none;
 }
 
+a, span {
+  display: inline-block;
+}
+
 header .nav-bar {
   margin: 0 100px 23px 100px;
   display: -webkit-box;
@@ -25,6 +80,19 @@ header .nav-bar {
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
+}
+
+header .nav-bar .theme-changer {
+  display: inline-block;
+  margin: 16px;
+}
+
+header .nav-bar .my-gifos {
+  font-size: 16px;
+}
+
+header .nav-bar .my-gifos::first-letter {
+  text-decoration: underline;
 }
 
 .container {

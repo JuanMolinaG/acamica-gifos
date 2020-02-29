@@ -1,5 +1,34 @@
-.title-bar{
+@import '_mixins.scss';
+
+.title-bar, .top-bar{
     height: 24px;
-    margin: 1px 1px 35px 1px;
-    padding: 3px 7px;
+}
+
+.btn-sm{
+    @include button-size(14px, 'sm')
+}
+.btn-md{
+    @include button-size(16px, 'md')
+}
+.btn-lg{
+    @include button-size(16px, 'lg')
+}
+.btn-xl{
+    @include button-size(16px, 'xl')
+}
+.btn-arrow{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    vertical-align: top;
+    cursor: pointer;
+    img{
+        display: block;
+    }
+}
+
+.container-box{
+    padding: 2px;
 }
