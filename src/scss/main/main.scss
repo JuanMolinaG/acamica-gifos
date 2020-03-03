@@ -17,21 +17,39 @@ a, span{
     display: inline-block;
 }
 
-header{
-    .nav-bar{
-        margin: 0 100px 23px 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .theme-changer{
-            display: inline-block;
-            margin: 16px;
+.nav-bar{
+    margin: 0 100px 23px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .theme-changer{
+        display: inline-block;
+        margin: 16px;
+        position: relative;
+        .theme-options{
+            list-style: none;
+            position: absolute;
+            padding: 0;
+            width: 100%;
+            z-index: 1;
+            height: 0;
+            overflow-y: hidden;
+            transition: all 0.3s ease-in;
         }
-        .my-gifos{
-            font-size: 16px;
-            &::first-letter{
-                text-decoration: underline;
+        &.active{
+            .btn-lg, .btn-arrow{
+                @include outline();
             }
+            .theme-options{
+                height: 106px;
+                padding: 10px;
+            }
+        }
+    }
+    .my-gifos{
+        font-size: 16px;
+        &::first-letter{
+            text-decoration: underline;
         }
     }
 }

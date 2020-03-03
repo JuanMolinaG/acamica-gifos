@@ -23,15 +23,15 @@
             opacity: 0.2;
         }
     }
-    .title-bar{
-        @include top-bar(14px, $box-shadow: false, $bold: true);
-        padding: 3px;
-    }
     .my-gifos:hover{
-        outline: 1px dashed #110038;
+        outline: 1px dotted #110038;
         outline-offset: 0px;
         padding: 7px 19px 7px 1px;
         margin: 0 -19px 0 -1px;
+    }
+    .title-bar{
+        @include top-bar(14px, $box-shadow: false, $bold: true);
+        padding: 3px;
     }
     .container-box{
         background: $box-bg;
@@ -39,6 +39,19 @@
         .search-input{
             border: 1px solid #979797;
             box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+        }
+        .btn-full{
+            background: #F0F0F0;
+            border: 1px solid #808080;
+            box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+            &.active{
+                background: #FFF4FD;
+                border: 1px solid #CCA6C9;
+                box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+                &::first-letter{
+                    text-decoration: underline;
+                }
+            }
         }
     }
 }

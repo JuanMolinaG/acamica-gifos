@@ -5,16 +5,24 @@
 }
 
 .btn-sm{
-    @include button-size(14px, 'sm')
+    @include button-size(14px, 'sm');
 }
 .btn-md{
-    @include button-size(16px, 'md')
+    @include button-size(16px, 'md');
 }
 .btn-lg{
-    @include button-size(16px, 'lg')
+    @include button-size(16px, 'lg');
 }
 .btn-xl{
-    @include button-size(16px, 'xl')
+    @include button-size(16px, 'xl');
+}
+.btn-full{
+    @include font-style(16px, 22px);
+    width: 100%;
+    padding: 7px 16px;
+    &:not(:last-child){
+        margin-bottom: 10px;
+    }
 }
 .btn-arrow{
     display: inline-flex;
@@ -26,6 +34,9 @@
     cursor: pointer;
     img{
         display: block;
+    }
+    &:hover, &:active{
+        @include outline();
     }
 }
 

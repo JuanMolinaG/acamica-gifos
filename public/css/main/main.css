@@ -10,12 +10,22 @@
   padding: 8px 0;
 }
 
+.btn-sm:hover, .btn-sm:active {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
+}
+
 .btn-md {
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   width: 102px;
   padding: 9px 0;
+}
+
+.btn-md:hover, .btn-md:active {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
 }
 
 .btn-lg {
@@ -26,12 +36,33 @@
   padding: 9px 0;
 }
 
+.btn-lg:hover, .btn-lg:active {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
+}
+
 .btn-xl {
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   width: 144px;
   padding: 9px 0;
+}
+
+.btn-xl:hover, .btn-xl:active {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
+}
+
+.btn-full {
+  font-size: 16px;
+  line-height: 22px;
+  width: 100%;
+  padding: 7px 16px;
+}
+
+.btn-full:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .btn-arrow {
@@ -49,6 +80,11 @@
 
 .btn-arrow img {
   display: block;
+}
+
+.btn-arrow:hover, .btn-arrow:active {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
 }
 
 .container-box {
@@ -72,7 +108,7 @@ a, span {
   display: inline-block;
 }
 
-header .nav-bar {
+.nav-bar {
   margin: 0 100px 23px 100px;
   display: -webkit-box;
   display: flex;
@@ -82,16 +118,39 @@ header .nav-bar {
           align-items: center;
 }
 
-header .nav-bar .theme-changer {
+.nav-bar .theme-changer {
   display: inline-block;
   margin: 16px;
+  position: relative;
 }
 
-header .nav-bar .my-gifos {
+.nav-bar .theme-changer .theme-options {
+  list-style: none;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  z-index: 1;
+  height: 0;
+  overflow-y: hidden;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.nav-bar .theme-changer.active .btn-lg, .nav-bar .theme-changer.active .btn-arrow {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
+}
+
+.nav-bar .theme-changer.active .theme-options {
+  height: 106px;
+  padding: 10px;
+}
+
+.nav-bar .my-gifos {
   font-size: 16px;
 }
 
-header .nav-bar .my-gifos::first-letter {
+.nav-bar .my-gifos::first-letter {
   text-decoration: underline;
 }
 

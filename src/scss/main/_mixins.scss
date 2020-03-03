@@ -15,9 +15,17 @@
         width: 144px;
         padding: 9px 0;
     }
+    &:hover, &:active{
+        @include outline();
+    }
 }
 
 @mixin font-style($font-size, $line-height) {
     font-size: $font-size;
     line-height: $line-height;
+}
+
+@mixin outline {
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
 }
