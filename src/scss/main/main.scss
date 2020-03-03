@@ -1,4 +1,5 @@
 @import '_partials.scss';
+@import '_mixins.scss';
 
 *{
     box-sizing: border-box;
@@ -6,11 +7,10 @@
     padding: 0;
     font-family: 'Chakra Petch','Helvetica';
     font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
     letter-spacing: 0;
     color: #110038;
     text-decoration: none;
+    @include font-style(14px, 18px);
 }
 
 a, span{
@@ -38,4 +38,21 @@ header{
 
 .container{
     margin: 0 100px;
+    .search-form {
+        padding: 12px 18px 12px 15px;
+        display: flex;
+        align-items: center;
+        .search-input{
+            @include font-style(16px, 22px);
+            padding: 13px 16px;
+            flex-grow: 1;
+        }
+        .search-button{
+            margin-left: 8px;
+            & > img{
+                margin-right: 10px;
+                vertical-align: top;
+            }
+        }
+    }
 }

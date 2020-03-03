@@ -61,11 +61,11 @@
   padding: 0;
   font-family: 'Chakra Petch','Helvetica';
   font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
   letter-spacing: 0;
   color: #110038;
   text-decoration: none;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 a, span {
@@ -97,6 +97,31 @@ header .nav-bar .my-gifos::first-letter {
 
 .container {
   margin: 0 100px;
+}
+
+.container .search-form {
+  padding: 12px 18px 12px 15px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.container .search-form .search-input {
+  font-size: 16px;
+  line-height: 22px;
+  padding: 13px 16px;
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+}
+
+.container .search-form .search-button {
+  margin-left: 8px;
+}
+
+.container .search-form .search-button > img {
+  margin-right: 10px;
+  vertical-align: top;
 }
 
 /*# sourceMappingURL=main.css.map */

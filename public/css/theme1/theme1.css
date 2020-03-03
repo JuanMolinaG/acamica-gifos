@@ -25,18 +25,9 @@
   background: #E6BBE2;
 }
 
-.sailor-day .btn-primary:hover {
+.sailor-day .btn-primary:hover, .sailor-day .btn-primary:active {
   outline: 1px dashed #110038;
   outline-offset: -4px;
-}
-
-.sailor-day .btn-primary > img {
-  margin-right: 10px;
-  vertical-align: top;
-}
-
-.sailor-day .btn-primary > img {
-  opacity: 1;
 }
 
 .sailor-day .btn-secondary {
@@ -46,18 +37,12 @@
 }
 
 .sailor-day .btn-secondary:hover {
-  outline: 1px dashed #110038;
   background: #3A72DB;
 }
 
-.sailor-day .btn-secondary:hover {
+.sailor-day .btn-secondary:hover, .sailor-day .btn-secondary:active {
   outline: 1px dashed #110038;
   outline-offset: -4px;
-}
-
-.sailor-day .btn-secondary > img {
-  margin-right: 10px;
-  vertical-align: top;
 }
 
 .sailor-day .btn-recording {
@@ -67,18 +52,12 @@
 }
 
 .sailor-day .btn-recording:hover {
-  outline: 1px dashed #110038;
   background: #E6BBE2;
 }
 
-.sailor-day .btn-recording:hover {
+.sailor-day .btn-recording:hover, .sailor-day .btn-recording:active {
   outline: 1px dashed #110038;
   outline-offset: -4px;
-}
-
-.sailor-day .btn-recording > img {
-  margin-right: 10px;
-  vertical-align: top;
 }
 
 .sailor-day .btn-disabled {
@@ -89,14 +68,9 @@
   pointer-events: none;
 }
 
-.sailor-day .btn-disabled:hover {
+.sailor-day .btn-disabled:hover, .sailor-day .btn-disabled:active {
   outline: 1px dashed #110038;
   outline-offset: -4px;
-}
-
-.sailor-day .btn-disabled > img {
-  margin-right: 10px;
-  vertical-align: top;
 }
 
 .sailor-day .btn-disabled > img {
@@ -106,7 +80,6 @@
 .sailor-day .title-bar {
   background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-  margin-bottom: 12px;
   padding: 3px;
 }
 
@@ -126,6 +99,11 @@
 .sailor-day .container-box {
   background: #E6E6E6;
   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.sailor-day .container-box .search-input {
+  border: 1px solid #979797;
+  box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
 }
 
 /*# sourceMappingURL=theme1.css.map */

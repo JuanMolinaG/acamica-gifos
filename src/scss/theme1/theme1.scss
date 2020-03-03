@@ -10,9 +10,6 @@
     }
     .btn-primary{
         @include button-type('primary');
-        & > img{
-            opacity: 1;
-        }
     }
     .btn-secondary{
         @include button-type('secondary');
@@ -28,7 +25,6 @@
     }
     .title-bar{
         @include top-bar(14px, $box-shadow: false, $bold: true);
-        margin-bottom: 12px;
         padding: 3px;
     }
     .my-gifos:hover{
@@ -40,8 +36,9 @@
     .container-box{
         background: $box-bg;
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-        .search-form{
-            
+        .search-input{
+            border: 1px solid #979797;
+            box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
         }
     }
 }

@@ -16,3 +16,8 @@
         padding: 9px 0;
     }
 }
+
+@mixin font-style($font-size, $line-height) {
+    font-size: $font-size;
+    line-height: $line-height;
+}
