@@ -29,6 +29,7 @@
   background-color: #4180F6;
   border: 1px solid #4C2F99;
   box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+  color: #FFFFFF;
 }
 
 .sailor-day .btn-secondary:hover {
@@ -39,6 +40,7 @@
   background-color: #FF6161;
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+  color: #FFFFFF;
 }
 
 .sailor-day .btn-recording:hover {
@@ -100,6 +102,12 @@
 
 .sailor-day .container-box .btn-full.active::first-letter {
   text-decoration: underline;
+}
+
+.sailor-day .title-input {
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
 }
 
 /*# sourceMappingURL=theme1.css.map */

@@ -1,5 +1,6 @@
 @import '_partials.scss';
 @import '_mixins.scss';
+@import '_spinner.scss';
 
 *{
     box-sizing: border-box;
@@ -15,6 +16,10 @@
 
 a, span{
     display: inline-block;
+}
+
+img{
+    display: block;
 }
 
 .nav-bar{
@@ -38,7 +43,7 @@ a, span{
         }
         &.active{
             .btn-lg, .btn-arrow{
-                @include outline();
+                @include outline(-4px);
             }
             .theme-options{
                 height: 106px;
@@ -70,6 +75,38 @@ a, span{
             & > img{
                 margin-right: 10px;
                 vertical-align: top;
+                display: inline-block;
+            }
+        }
+    }
+    .suggested-section, .trends-section{
+        padding-top: 64px;
+    }
+    .suggested-container{
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 25%));
+        grid-gap: 16px;
+        .suggested-item{
+            padding: 4px;
+            .item-body{
+                height: 280px;
+                margin-top: 2px;
+                overflow: hidden;
+                position: relative;
+                img{
+                    height: 100%;
+                }
+                .btn-secondary{
+                    position: absolute;
+                    bottom: 15px;
+                    left: 7px;
+                }
+                &:hover{
+                    @include outline(-2px);
+                }
+            }
+            &.loading > .title-bar span{
+                filter: blur(3px);
             }
         }
     }

@@ -1,5 +1,11 @@
 .title-bar, .top-bar {
   height: 24px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
 }
 
 .btn-sm {
@@ -91,6 +97,57 @@
   padding: 2px;
 }
 
+.title-input {
+  width: 100%;
+  padding: 7px;
+  margin-bottom: 16px;
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 90px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -106,6 +163,10 @@
 
 a, span {
   display: inline-block;
+}
+
+img {
+  display: block;
 }
 
 .nav-bar {
@@ -181,6 +242,48 @@ a, span {
 .container .search-form .search-button > img {
   margin-right: 10px;
   vertical-align: top;
+  display: inline-block;
+}
+
+.container .suggested-section, .container .trends-section {
+  padding-top: 64px;
+}
+
+.container .suggested-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 25%));
+  grid-gap: 16px;
+}
+
+.container .suggested-container .suggested-item {
+  padding: 4px;
+}
+
+.container .suggested-container .suggested-item .item-body {
+  height: 280px;
+  margin-top: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.container .suggested-container .suggested-item .item-body img {
+  height: 100%;
+}
+
+.container .suggested-container .suggested-item .item-body .btn-secondary {
+  position: absolute;
+  bottom: 15px;
+  left: 7px;
+}
+
+.container .suggested-container .suggested-item .item-body:hover {
+  outline: 1px dotted #110038;
+  outline-offset: -2px;
+}
+
+.container .suggested-container .suggested-item.loading > .title-bar span {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
 }
 
 /*# sourceMappingURL=main.css.map */

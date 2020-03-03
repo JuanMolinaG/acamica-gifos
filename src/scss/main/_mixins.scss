@@ -16,7 +16,7 @@
         padding: 9px 0;
     }
     &:hover, &:active{
-        @include outline();
+        @include outline(-4px);
     }
 }
 
@@ -25,7 +25,7 @@
     line-height: $line-height;
 }
 
-@mixin outline {
+@mixin outline($offset) {
     outline: 1px dotted #110038;
-    outline-offset: -4px;
+    outline-offset: $offset;
 }

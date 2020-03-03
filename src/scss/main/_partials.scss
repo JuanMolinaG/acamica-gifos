@@ -2,6 +2,9 @@
 
 .title-bar, .top-bar{
     height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .btn-sm{
@@ -36,10 +39,16 @@
         display: block;
     }
     &:hover, &:active{
-        @include outline();
+        @include outline(-4px);
     }
 }
 
 .container-box{
     padding: 2px;
+}
+
+.title-input{
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 16px;
 }

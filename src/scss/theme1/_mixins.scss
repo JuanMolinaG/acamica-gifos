@@ -24,6 +24,7 @@
         background-color: $secondary-color;
         border: 1px solid #4C2F99;
         box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+        color: #FFFFFF;
         &:hover{
             background: #3A72DB;
         }
@@ -31,6 +32,7 @@
         background-color: $recording-color;
         border: 1px solid #110038;
         box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+        color: #FFFFFF;
         &:hover{
             background: #E6BBE2;
         }
