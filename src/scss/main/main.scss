@@ -110,4 +110,35 @@ img{
             }
         }
     }
+    .trends-container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        .trend-item{
+            height: 298px;
+            margin-bottom: 16px;
+            position: relative;
+            transition: all linear 0.2s;
+            > img{
+                height: 100%;
+            }
+            > .title-bar{
+                position: absolute;
+                bottom: 3px;
+                width: 100%;
+                opacity: 0;
+                transition: all linear 0.2s;
+            }
+            &:hover{
+                @include outline(-5px);
+                padding: 3px;
+                margin: 0 3px 16px 3px;
+                > .title-bar{
+                    opacity: 1;
+                    width: calc(100% - 6px);
+                }
+            }
+        }
+    }
 }

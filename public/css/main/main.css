@@ -286,4 +286,47 @@ img {
           filter: blur(3px);
 }
 
+.container .trends-container {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.container .trends-container .trend-item {
+  height: 298px;
+  margin-bottom: 16px;
+  position: relative;
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.container .trends-container .trend-item > img {
+  height: 100%;
+}
+
+.container .trends-container .trend-item > .title-bar {
+  position: absolute;
+  bottom: 3px;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.container .trends-container .trend-item:hover {
+  outline: 1px dotted #110038;
+  outline-offset: -5px;
+  padding: 3px;
+  margin: 0 3px 16px 3px;
+}
+
+.container .trends-container .trend-item:hover > .title-bar {
+  opacity: 1;
+  width: calc(100% - 6px);
+}
+
 /*# sourceMappingURL=main.css.map */

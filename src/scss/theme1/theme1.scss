@@ -59,4 +59,8 @@
         border: 1px solid #E6BBE2;
         box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
     }
+    .trend-item:hover{
+        background: #E6E6E6;
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    }
 }
