@@ -8,6 +8,12 @@
           align-items: center;
 }
 
+.title-bar > span, .top-bar > span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .btn-sm {
   text-align: center;
   font-size: 14px;
