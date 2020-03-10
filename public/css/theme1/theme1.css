@@ -21,7 +21,7 @@
   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
-.sailor-day .btn-primary:hover {
+.sailor-day .btn-primary:hover, .sailor-day .btn-primary:active {
   background: #E6BBE2;
 }
 
@@ -32,7 +32,7 @@
   color: #FFFFFF;
 }
 
-.sailor-day .btn-secondary:hover {
+.sailor-day .btn-secondary:hover, .sailor-day .btn-secondary:active {
   background: #3A72DB;
 }
 
@@ -43,7 +43,7 @@
   color: #FFFFFF;
 }
 
-.sailor-day .btn-recording:hover {
+.sailor-day .btn-recording:hover, .sailor-day .btn-recording:active {
   background: #E6BBE2;
 }
 
@@ -57,6 +57,10 @@
 
 .sailor-day .btn-disabled > img {
   opacity: 0.2;
+}
+
+.sailor-day .theme-changer:hover > .btn-primary {
+  background: #E6BBE2;
 }
 
 .sailor-day .my-gifos:hover {
@@ -98,6 +102,7 @@
   background: #FFF4FD;
   border: 1px solid #CCA6C9;
   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+  pointer-events: none;
 }
 
 .sailor-day .container-box .btn-full.active::first-letter {

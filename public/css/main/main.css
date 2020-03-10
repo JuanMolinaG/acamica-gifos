@@ -65,10 +65,16 @@
   line-height: 22px;
   width: 100%;
   padding: 7px 16px;
+  cursor: pointer;
 }
 
 .btn-full:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.btn-full:hover {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
 }
 
 .btn-arrow {
@@ -101,6 +107,11 @@
   width: 100%;
   padding: 7px;
   margin-bottom: 16px;
+  cursor: default;
+}
+
+.relative {
+  position: relative;
 }
 
 .spinner {
@@ -185,6 +196,12 @@ img {
   position: relative;
 }
 
+.nav-bar .theme-changer:hover > .btn-lg,
+.nav-bar .theme-changer:hover > .btn-arrow {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
+}
+
 .nav-bar .theme-changer .theme-options {
   list-style: none;
   position: absolute;
@@ -245,6 +262,22 @@ img {
   display: inline-block;
 }
 
+.container .suggested-searchs {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  padding: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.container .suggested-searchs.active {
+  padding: 16px 128px 16px 15px;
+  height: 166px;
+}
+
 .container .suggested-section, .container .trends-section {
   padding-top: 64px;
 }
@@ -264,6 +297,10 @@ img {
   margin-top: 2px;
   overflow: hidden;
   position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 .container .suggested-container .suggested-item .item-body img {

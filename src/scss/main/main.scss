@@ -31,6 +31,10 @@ img{
         display: inline-block;
         margin: 16px;
         position: relative;
+        &:hover > .btn-lg,
+        &:hover > .btn-arrow{
+            @include outline(-4px);
+        }
         .theme-options{
             list-style: none;
             position: absolute;
@@ -79,6 +83,19 @@ img{
             }
         }
     }
+    .suggested-searchs{
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+        transition: all linear 0.3s;
+        padding: 0;
+        z-index: 1;
+        width: 100%;
+        &.active{
+            padding: 16px 128px 16px 15px;
+            height: 166px;
+        }
+    }
     .suggested-section, .trends-section{
         padding-top: 64px;
     }
@@ -93,6 +110,8 @@ img{
                 margin-top: 2px;
                 overflow: hidden;
                 position: relative;
+                display: flex;
+                justify-content: center;
                 img{
                     height: 100%;
                 }

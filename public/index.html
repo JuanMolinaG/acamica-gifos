@@ -39,23 +39,29 @@
                 <div class="title-bar">
                     <span>Buscar</span>
                 </div>
-                <form action="#" class="search-form">
+                <form action="#" class="search-form" autocomplete="off">
                     <input type="text" name="search" class="search-input" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"><!--
                  --><button type="submit" class="btn-md btn-disabled search-button"><img src="./assets/img/lupa.svg" alt="lupa">Buscar</button>
                 </form>
+            </div>
+            <div class="relative">
+                <div class="suggested-searchs container-box">
+                    <a href="#" class="btn-full btn-suggested">Sugerido 1</a>
+                    <a href="#" class="btn-full btn-suggested">Sugerido 2</a>
+                    <a href="#" class="btn-full btn-suggested">Sugerido 3</a>
+                </div>
             </div>
         </section>
         <section class="suggested-section">
             <input type="text" class="title-input" readonly value="Hoy te sugerimos:">
             <div class="suggested-container">
-                <div class="suggested-item container-box">
-                    <div class="title-bar">
-                        <span>#HotRod</span>
-                        <img src="./assets/img/close.svg" alt="">
-                    </div>
+                <div class="suggested-item container-box loading">
+                    <div class="title-bar"><span>#DummyText</span></div>
                     <div class="item-body">
-                        <img src="./assets/img/hot-rod.jpg" alt="">
-                        <a href="#" class="btn-sm btn-secondary">Ver más...</a>
+                        <div class="spinner">
+                            <div class="double-bounce1"></div>
+                            <div class="double-bounce2"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="suggested-item container-box loading">
@@ -94,14 +100,9 @@
                     <div class="double-bounce1"></div>
                     <div class="double-bounce2"></div>
                 </div>
-                <!-- <div class="trend-item">
-                    <img src="./assets/img/hot-rod.jpg" alt="">
-                    <div class="title-bar">
-                        <span>#HotRod #Custom #Vintage</span>
-                    </div>
-                </div> -->
             </div>
         </section>
     </div>
+    <script src="./js/main.js" type="module"></script>
 </body>
 </html>

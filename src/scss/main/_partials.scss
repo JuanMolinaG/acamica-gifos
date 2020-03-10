@@ -23,8 +23,12 @@
     @include font-style(16px, 22px);
     width: 100%;
     padding: 7px 16px;
+    cursor: pointer;
     &:not(:last-child){
         margin-bottom: 10px;
+    }
+    &:hover{
+        @include outline(-4px);
     }
 }
 .btn-arrow{
@@ -51,4 +55,9 @@
     width: 100%;
     padding: 7px;
     margin-bottom: 16px;
+    cursor: default;
+}
+
+.relative{
+    position: relative;
 }

@@ -23,6 +23,12 @@
             opacity: 0.2;
         }
     }
+    .btn-suggested{
+        @include button-type('suggested');
+    }
+    .theme-changer:hover > .btn-primary{
+        background: #E6BBE2;
+    }
     .my-gifos:hover{
         outline: 1px dotted #110038;
         outline-offset: 0px;
@@ -48,6 +54,7 @@
                 background: #FFF4FD;
                 border: 1px solid #CCA6C9;
                 box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+                pointer-events: none;
                 &::first-letter{
                     text-decoration: underline;
                 }

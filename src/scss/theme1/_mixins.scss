@@ -17,7 +17,7 @@
         background-color: $primary-color;
         border: 1px solid #110038;
         box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-        &:hover{
+        &:hover, &:active{
             background: #E6BBE2;
         }
     } @else if $type == 'secondary' {
@@ -25,7 +25,7 @@
         border: 1px solid #4C2F99;
         box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
         color: #FFFFFF;
-        &:hover{
+        &:hover, &:active{
             background: #3A72DB;
         }
     } @else if $type == 'recording' {
@@ -33,7 +33,7 @@
         border: 1px solid #110038;
         box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
         color: #FFFFFF;
-        &:hover{
+        &:hover, &:active{
             background: #E6BBE2;
         }
     } @else if $type == 'disabled' {
