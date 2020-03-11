@@ -120,6 +120,10 @@
   position: relative;
 }
 
+.d-none {
+  display: none;
+}
+
 .spinner {
   width: 100px;
   height: 100px;
