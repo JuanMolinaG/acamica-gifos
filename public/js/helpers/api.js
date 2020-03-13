@@ -1,4 +1,4 @@
-class ApiRequests{
+export default class ApiRequests{
     constructor() {
         this.apiKey= '98DZpP9iuSTg6FFtfqO3TV3X6MrQ0FDD';
     }
@@ -18,5 +18,3 @@ class ApiRequests{
             return results;
     }
 }
-
-export default ApiRequests;

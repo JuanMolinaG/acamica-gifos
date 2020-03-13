@@ -35,6 +35,9 @@
     &:hover{
         @include outline(-4px);
     }
+    &:first-letter {
+        text-transform: uppercase;
+    }
 }
 .btn-arrow{
     display: inline-flex;

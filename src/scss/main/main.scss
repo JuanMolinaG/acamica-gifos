@@ -114,6 +114,8 @@ img{
                 justify-content: center;
                 img{
                     height: 100%;
+                    width: 100%;
+                    object-fit: cover;
                 }
                 .btn-secondary{
                     position: absolute;
@@ -130,17 +132,18 @@ img{
         }
     }
     .trends-container{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 25%));
+        grid-gap: 16px;
+        margin-bottom: 20px;
         .trend-item{
             height: 298px;
-            margin-bottom: 16px;
             position: relative;
             transition: all linear 0.2s;
             > img{
                 height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
             > .title-bar{
                 position: absolute;
@@ -149,10 +152,13 @@ img{
                 opacity: 0;
                 transition: all linear 0.2s;
             }
+            &:nth-child(5n+5){
+                grid-column: span 2;
+            }
             &:hover{
                 @include outline(-5px);
                 padding: 3px;
-                margin: 0 3px 16px 3px;
+                // margin: 0 3px 16px 3px;
                 > .title-bar{
                     opacity: 1;
                     width: calc(100% - 6px);

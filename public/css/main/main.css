@@ -83,6 +83,10 @@
   outline-offset: -4px;
 }
 
+.btn-full:first-letter {
+  text-transform: uppercase;
+}
+
 .btn-arrow {
   display: -webkit-inline-box;
   display: inline-flex;
@@ -315,6 +319,9 @@ img {
 
 .container .suggested-container .suggested-item .item-body img {
   height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container .suggested-container .suggested-item .item-body .btn-secondary {
@@ -334,18 +341,14 @@ img {
 }
 
 .container .trends-container {
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-box-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 25%));
+  grid-gap: 16px;
+  margin-bottom: 20px;
 }
 
 .container .trends-container .trend-item {
   height: 298px;
-  margin-bottom: 16px;
   position: relative;
   -webkit-transition: all linear 0.2s;
   transition: all linear 0.2s;
@@ -353,6 +356,9 @@ img {
 
 .container .trends-container .trend-item > img {
   height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container .trends-container .trend-item > .title-bar {
@@ -364,11 +370,14 @@ img {
   transition: all linear 0.2s;
 }
 
+.container .trends-container .trend-item:nth-child(5n+5) {
+  grid-column: span 2;
+}
+
 .container .trends-container .trend-item:hover {
   outline: 1px dotted #110038;
   outline-offset: -5px;
   padding: 3px;
-  margin: 0 3px 16px 3px;
 }
 
 .container .trends-container .trend-item:hover > .title-bar {
