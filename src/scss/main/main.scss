@@ -18,12 +18,16 @@ a, span{
     display: inline-block;
 }
 
+b{
+    font-weight: 700;
+}
+
 img{
     display: block;
 }
 
 .nav-bar{
-    margin: 0 100px 23px 100px;
+    margin: 0 100px 16px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -131,7 +135,7 @@ img{
             }
         }
     }
-    .trends-container{
+    .trends-container, .my-gifos-container{
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 25%));
         grid-gap: 16px;
@@ -165,5 +169,127 @@ img{
                 }
             }
         }
+    }
+    .create-gif-container{
+        margin: 75px auto 153px;
+        width: 684px;
+        .create-gif-body{
+            padding: 8px 14px 13px 8px;
+            display: flex;
+            .icon-container{
+                padding: 22px 16px 0 7px;
+            }
+            .text-container{
+                padding-top: 22px;
+                max-width: 518px;
+                h2{
+                    @include font-style(16px, 22px);
+                    font-weight: 700;
+                }
+                p{
+                    @include font-style(14px, 20px);
+                }
+                ol{
+                    list-style: none;
+                    padding: 5px 0;
+                    li{
+                        padding: 5px 0;
+                    }
+                }
+            }
+            .video-viewer, .gif-previewer{
+                width: 828px;
+                height: 440px;
+                padding: 2px;
+                object-fit: fill;
+            }
+        }
+        .create-gif-footer{
+            padding: 8px;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            .instructions-actions{
+                .btn-xl + .btn-xl{
+                    margin: 20px 28px 28px 16px;
+                }
+            }
+            .buttons-container{
+                width: 100%;
+                justify-content: flex-end;
+                display: flex;
+                .start-record-button, .stop-record-button{
+                    padding: 0 6px 6px 0;
+                }
+                .start-record-button:hover > .btn-xl,
+                .start-record-button:hover > .btn-camera,
+                .stop-record-button:hover > .btn-xl,
+                .stop-record-button:hover > .btn-rec{
+                    @include outline(-4px);
+                }
+                .preview-gif-actions{
+                    padding: 0 6px 6px 0;
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                    margin-left: 24px;
+                    .preview-controls{
+                        flex-grow: 1;
+                    }
+                    .btn-xl + .btn-xl{
+                        margin-left: 14px;;
+                    }
+                }
+            }
+            .counter-input{
+                @include font-style(16px, 22px);
+                width: 124px;
+                height: 38px;
+                padding: 0 16px;
+                pointer-events: none;
+            }
+        }
+    }
+
+
+
+
+
+
+    .progress-bar {
+        display: inline-block;
+        background: linear-gradient(90deg, #f7c9f3 0%, #f7c9f3 50%, #999999 50%, #999999 100%);
+        background-size: 200% 100%;
+        background-position: 100% 200%;
+        box-shadow: inset -2px -2px 0 0 #FFFCFC, inset 2px 2px 0 0 #000000;
+        padding: 2px 2px 0 2px;
+        height: 24px;
+        // animation-name: gradient;
+        // animation-timing-function: linear;
+        // animation-iteration-count: infinite;
+    }
+
+    // .progress-bar:hover {
+    //     animation: gradient 2s linear infinite;
+    // }
+
+    @keyframes gradient {
+        100% {
+            background-position: 0% 100%;
+        }
+    }
+
+    .progress-section {
+        width: 12px;
+        height: 20px;
+        display: inline-block;
+        background: transparent;
+        box-sizing: content-box;
+    }
+
+    .progress-section:nth-child(even) {
+        border-style: none solid;
+        border-width: 2px;
+        border-color: #B4B4B4;
     }
 }

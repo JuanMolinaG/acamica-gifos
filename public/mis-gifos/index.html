@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GifOS</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main/main.css">
+    <link rel="stylesheet" href="../css/theme1/theme1.css">
+    <link rel="stylesheet" href="../css/theme2/theme2.css">
+</head>
+<body class="sailor-day my-gifos">
+    <header>
+        <div class="top-bar">
+            <span>¡Bienvenidos/as a Gifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</span>
+        </div>
+        <nav class="nav-bar">
+            <div class="logo-container">
+                <a href=".."><img src="../assets/img/gifos_logo.png" alt="Logo gifos"></a>
+            </div>
+            <div class="navigation-container">
+                <a href="#" class="btn-primary btn-xl">Crear Gifos</a><!--
+             --><div class="theme-changer">
+                    <span class="btn-primary btn-lg">Elegir tema</span><!--
+                 --><span class="btn-primary btn-arrow"><img src="../assets/img/dropdown.svg" alt="Flecha hacia abajo"></span>
+                    <ul class="theme-options container-box">
+                        <li class="btn-full active">Sailor Day</li>
+                        <li class="btn-full">Sailor Night</li>
+                    </ul>
+                </div><!--
+             --><a href="#" class="my-gifos">Mis Gifos</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="create-gif-section">
+            <div class="create-gif-container container-box">
+                <div class="title-bar">
+                    <span>Crear Gifos</span>
+                    <img src="../assets/img/close.svg" alt="">
+                </div>
+                <div class="create-gif-body">
+                    <div class="icon-container">
+                        <img src="../assets/img/window img.png" alt="Icono de ventana de navegación">
+                    </div>
+                    <div class="text-container">
+                        <h2>Aquí podrás crear tus propios gifos</h2>
+                        <p>
+                            Crear tu <i><b>gifo</b></i> es muy fácil, graba cualquier imagen con tu cámara y obten gifos personalizados. los pasos para crear tu gifo son:
+                        </p>
+                        <ol>
+                            <li><b>1)</b> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+                            <li><b>2)</b> Capturar tu momento gifo</li>
+                            <li><b>3)</b> Revisar el momento</li>
+                            <li><b>4)</b> Listo para subir y compartir!</li>
+                        </ol>
+                        <p>¿Quieres comenzar a crear tu <i><b>gifo</b></i> ahora?</p>
+                    </div>
+                    <div class="media-container d-none">
+                        <video class="video-viewer"></video>
+                        <img alt="Gif preview" class="gif-previewer d-none">
+                        <canvas class="thumbnail-drawer d-none"></canvas>
+                    </div>
+                </div>
+                <div class="create-gif-footer">
+                    <div class="buttons-container">
+                        <div class="instructions-actions">
+                            <a href="#" class="btn-xl btn-simple cancel-creation">Cancelar</a><!--
+                            --><a href="#" class="btn-xl btn-primary start-creation">Comenzar</a>
+                        </div>
+                        <div class="start-record-button d-none">
+                            <span class="btn-primary btn-camera"><img src="../assets/img/camera.svg" alt="Icono de cámara"></span><!--
+                         --><span class="btn-xl btn-primary start-record">Capturar</span>
+                        </div>
+                        <div class="stop-record-button d-none">
+                            <span class="btn-recording btn-rec"><img src="../assets/img/recording.svg" alt="Icono de grabación"></span><!--
+                         --><span class="btn-xl btn-recording">Listo</span>
+                        </div>
+                        <div class="preview-gif-actions d-none">
+                            <div class="preview-controls">
+                                <span class="btn-play btn-primary"><img src="../assets/img/forward.svg" alt="Icono de flecha hacia la derecha"></span>
+                                <div class="progress-bar">
+                                    <div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div><!--
+                                 --><div class="progress-section"></div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-simple btn-xl repeat-capture">Repetir Captura</a><!--
+                         --><a href="#" class="btn-primary btn-xl upload-gif">Subir Gifo</a>
+                        </div>
+                    </div>
+                    <input type="text" class="counter-input d-none" value="00:00:00:00" readonly>
+                </div>
+            </div>
+        </section>
+        <section class="my-gifos-section">
+            <input type="text" class="title-input" readonly value="Mis gifos">
+            <div class="my-gifos-container">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="../js/vendor/RecordRTC.js"></script>
+    <script src="../js/main.js" type="module"></script>
+</body>
+</html>

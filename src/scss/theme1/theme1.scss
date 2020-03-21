@@ -23,11 +23,18 @@
             opacity: 0.2;
         }
     }
+    .btn-simple{
+        @include button-type('simple');
+    }
     .btn-suggested{
         @include button-type('suggested');
     }
-    .theme-changer:hover > .btn-primary{
+    .theme-changer:hover > .btn-primary,
+    .start-record-button:hover > .btn-primary{
         background: #E6BBE2;
+    }
+    .stop-record-button:hover > .btn-recording{
+        background: #D65C5C;
     }
     .my-gifos:hover{
         outline: 1px dotted #110038;
@@ -69,5 +76,16 @@
     .trend-item:hover{
         background: #E6E6E6;
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    }
+    .media-container .video-viewer,
+    .media-container .gif-previewer{
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    }
+    .counter-input{
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
     }
 }

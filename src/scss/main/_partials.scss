@@ -39,7 +39,7 @@
         text-transform: uppercase;
     }
 }
-.btn-arrow{
+.btn-arrow, .btn-camera, .btn-rec{
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -47,11 +47,21 @@
     height: 38px;
     vertical-align: top;
     cursor: pointer;
-    img{
-        display: block;
-    }
     &:hover, &:active{
         @include outline(-4px);
+    }
+}
+
+.btn-play{
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+    &:hover, &:active{
+        @include outline(-4px);
+        cursor: pointer;
     }
 }
 
@@ -64,6 +74,7 @@
     padding: 7px;
     margin-bottom: 16px;
     cursor: default;
+    pointer-events: none;
 }
 
 .relative{
@@ -71,5 +82,17 @@
 }
 
 .d-none{
-    display: none;
+    display: none !important;
+}
+
+.waiting{
+    filter: grayscale(1);
+    pointer-events: none;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    background: #cecece;
 }
