@@ -14,6 +14,9 @@
     } @else if $button-size == 'xl' {
         width: 144px;
         padding: 9px 0;
+    } @else if $button-size == 'xxl' {
+        width: 256px;
+        padding: 9px 0;
     }
     &:hover, &:active{
         @include outline(-4px);

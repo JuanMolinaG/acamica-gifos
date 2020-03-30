@@ -132,13 +132,10 @@
 }
 
 .sailor-day .media-container .video-viewer,
-.sailor-day .media-container .gif-previewer {
-  background: #FFFFFF;
-  border: 1px solid #979797;
-  box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-}
-
-.sailor-day .counter-input {
+.sailor-day .media-container .gif-previewer,
+.sailor-day .counter-input,
+.sailor-day .uploading-container,
+.sailor-day .uploaded-gif {
   background: #FFFFFF;
   border: 1px solid #979797;
   box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;

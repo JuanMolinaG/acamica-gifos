@@ -14,6 +14,10 @@
   overflow: hidden;
 }
 
+.title-bar > img, .top-bar > img {
+  cursor: pointer;
+}
+
 .btn-sm {
   text-align: center;
   font-size: 14px;
@@ -62,6 +66,19 @@
 }
 
 .btn-xl:hover, .btn-xl:active {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
+}
+
+.btn-xxl {
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width: 256px;
+  padding: 9px 0;
+}
+
+.btn-xxl:hover, .btn-xxl:active {
   outline: 1px dotted #110038;
   outline-offset: -4px;
 }
@@ -154,6 +171,48 @@
   border-radius: 5px;
   width: 100%;
   background: #cecece;
+}
+
+.progress-bar {
+  display: inline-block;
+  background: -webkit-gradient(linear, left top, right top, from(#f7c9f3), color-stop(50%, #f7c9f3), color-stop(50%, #999999), to(#999999));
+  background: linear-gradient(90deg, #f7c9f3 0%, #f7c9f3 50%, #999999 50%, #999999 100%);
+  background-size: 200% 100%;
+  background-position: 100% 200%;
+  box-shadow: inset -2px -2px 0 0 #FFFCFC, inset 2px 2px 0 0 #000000;
+  padding: 2px 2px 0 2px;
+  height: 24px;
+}
+
+.progress-bar .progress-section {
+  width: 12px;
+  height: 20px;
+  display: inline-block;
+  background: transparent;
+  box-sizing: content-box;
+}
+
+.progress-bar .progress-section:nth-child(even) {
+  border-style: none solid;
+  border-width: 2px;
+  border-color: #B4B4B4;
+}
+
+.flex-row-break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+@-webkit-keyframes gradient-move {
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes gradient-move {
+  100% {
+    background-position: 0% 100%;
+  }
 }
 
 .spinner {
@@ -468,6 +527,66 @@ img {
      object-fit: fill;
 }
 
+.container .create-gif-container .create-gif-body .uploading-container {
+  width: 828px;
+  height: 440px;
+  display: -webkit-box;
+  display: flex;
+  align-content: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container .create-gif-container .create-gif-body .uploading-container b {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 8px 0 40px;
+}
+
+.container .create-gif-container .create-gif-body .uploading-container .progress-bar {
+  -webkit-animation: gradient-move steps(17, start) 1s infinite;
+          animation: gradient-move steps(17, start) 1s infinite;
+  margin-bottom: 10px;
+}
+
+.container .create-gif-container .create-gif-body .uploading-container p, .container .create-gif-container .create-gif-body .uploading-container span {
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(17, 0, 56, 0.64);
+}
+
+.container .create-gif-container .create-gif-body .uploading-container span {
+  text-decoration: line-through;
+}
+
+.container .create-gif-container .create-gif-body .upload-result-container {
+  padding: 21px 0 0 19px;
+  display: -webkit-box;
+  display: flex;
+}
+
+.container .create-gif-container .create-gif-body .upload-result-container .uploaded-gif {
+  width: 371px;
+  height: 196px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 2px;
+}
+
+.container .create-gif-container .create-gif-body .upload-result-container .column-2 {
+  padding: 20px 24px;
+}
+
+.container .create-gif-container .create-gif-body .upload-result-container .column-2 b {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.container .create-gif-container .create-gif-body .upload-result-container .column-2 .btn-xxl:nth-child(2) {
+  margin: 16px 0 14px;
+}
+
 .container .create-gif-container .create-gif-footer {
   padding: 8px;
   display: -webkit-box;
@@ -523,6 +642,10 @@ img {
   margin-left: 14px;
 }
 
+.container .create-gif-container .create-gif-footer .buttons-container .final-action {
+  padding: 40px 38px 36px;
+}
+
 .container .create-gif-container .create-gif-footer .counter-input {
   font-size: 16px;
   line-height: 22px;
@@ -530,43 +653,6 @@ img {
   height: 38px;
   padding: 0 16px;
   pointer-events: none;
-}
-
-.container .progress-bar {
-  display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#f7c9f3), color-stop(50%, #f7c9f3), color-stop(50%, #999999), to(#999999));
-  background: linear-gradient(90deg, #f7c9f3 0%, #f7c9f3 50%, #999999 50%, #999999 100%);
-  background-size: 200% 100%;
-  background-position: 100% 200%;
-  box-shadow: inset -2px -2px 0 0 #FFFCFC, inset 2px 2px 0 0 #000000;
-  padding: 2px 2px 0 2px;
-  height: 24px;
-}
-
-@-webkit-keyframes gradient {
-  100% {
-    background-position: 0% 100%;
-  }
-}
-
-@keyframes gradient {
-  100% {
-    background-position: 0% 100%;
-  }
-}
-
-.container .progress-section {
-  width: 12px;
-  height: 20px;
-  display: inline-block;
-  background: transparent;
-  box-sizing: content-box;
-}
-
-.container .progress-section:nth-child(even) {
-  border-style: none solid;
-  border-width: 2px;
-  border-color: #B4B4B4;
 }
 
 /*# sourceMappingURL=main.css.map */

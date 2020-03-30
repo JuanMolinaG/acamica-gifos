@@ -203,6 +203,48 @@ img{
                 padding: 2px;
                 object-fit: fill;
             }
+            .uploading-container{
+                width: 828px;
+                height: 440px;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                b{
+                    @include font-style(16px, 22px);
+                    margin: 8px 0 40px;
+                }
+                .progress-bar{
+                    animation: gradient-move steps(17, start) 1s infinite;
+                    margin-bottom: 10px;
+                }
+                p, span{
+                    @include font-style(12px, 14px);
+                    color: rgba(17,0,56,0.64);
+                }
+                span{
+                    text-decoration: line-through;
+                }
+            }
+            .upload-result-container{
+                padding: 21px 0 0 19px;
+                display: flex;
+                .uploaded-gif{
+                    width: 371px;
+                    height: 196px;
+                    object-fit: cover;
+                    padding: 2px;
+                }
+                .column-2{
+                    padding: 20px 24px;
+                    b{
+                        @include font-style(16px, 22px);
+                    }
+                    .btn-xxl:nth-child(2){
+                        margin: 16px 0 14px;
+                    }
+                }
+            }
         }
         .create-gif-footer{
             padding: 8px;
@@ -240,6 +282,9 @@ img{
                         margin-left: 14px;;
                     }
                 }
+                .final-action{
+                    padding: 40px 38px 36px;
+                }
             }
             .counter-input{
                 @include font-style(16px, 22px);
@@ -249,47 +294,5 @@ img{
                 pointer-events: none;
             }
         }
-    }
-
-
-
-
-
-
-    .progress-bar {
-        display: inline-block;
-        background: linear-gradient(90deg, #f7c9f3 0%, #f7c9f3 50%, #999999 50%, #999999 100%);
-        background-size: 200% 100%;
-        background-position: 100% 200%;
-        box-shadow: inset -2px -2px 0 0 #FFFCFC, inset 2px 2px 0 0 #000000;
-        padding: 2px 2px 0 2px;
-        height: 24px;
-        // animation-name: gradient;
-        // animation-timing-function: linear;
-        // animation-iteration-count: infinite;
-    }
-
-    // .progress-bar:hover {
-    //     animation: gradient 2s linear infinite;
-    // }
-
-    @keyframes gradient {
-        100% {
-            background-position: 0% 100%;
-        }
-    }
-
-    .progress-section {
-        width: 12px;
-        height: 20px;
-        display: inline-block;
-        background: transparent;
-        box-sizing: content-box;
-    }
-
-    .progress-section:nth-child(even) {
-        border-style: none solid;
-        border-width: 2px;
-        border-color: #B4B4B4;
     }
 }

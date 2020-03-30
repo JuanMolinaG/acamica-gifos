@@ -20,7 +20,7 @@
                 <a href=".."><img src="../assets/img/gifos_logo.png" alt="Logo gifos"></a>
             </div>
             <div class="navigation-container">
-                <a href="#" class="btn-primary btn-xl">Crear Gifos</a><!--
+                <a href="./?action=crearGifos" class="btn-primary btn-xl">Crear Gifos</a><!--
              --><div class="theme-changer">
                     <span class="btn-primary btn-lg">Elegir tema</span><!--
                  --><span class="btn-primary btn-arrow"><img src="../assets/img/dropdown.svg" alt="Flecha hacia abajo"></span>
@@ -29,13 +29,13 @@
                         <li class="btn-full">Sailor Night</li>
                     </ul>
                 </div><!--
-             --><a href="#" class="my-gifos">Mis Gifos</a>
+             --><a href="./" class="my-gifos">Mis Gifos</a>
             </div>
         </nav>
     </header>
     <div class="container">
         <section class="create-gif-section">
-            <div class="create-gif-container container-box">
+            <div class="create-gif-container container-box d-none">
                 <div class="title-bar">
                     <span>Crear Gifos</span>
                     <img src="../assets/img/close.svg" alt="">
@@ -59,8 +59,45 @@
                     </div>
                     <div class="media-container d-none">
                         <video class="video-viewer"></video>
-                        <img alt="Gif preview" class="gif-previewer d-none">
+                        <img alt="Vista previa del gif" class="gif-previewer d-none">
                         <canvas class="thumbnail-drawer d-none"></canvas>
+                    </div>
+                    <div class="uploading-container d-none">
+                        <img src="../assets/img/globe_img.png" alt="Icono de globo terraqueo">
+                        <div class="flex-row-break"></div>
+                        <b>Estamos subiendo tu gifo…</b>
+                        <div class="flex-row-break"></div>
+                        <div class="progress-bar">
+                            <div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div><!--
+                         --><div class="progress-section"></div>
+                        </div>
+                        <div class="flex-row-break"></div>
+                        <p>Tiempo restante: <span>38 años</span> algunos minutos</p>
+                    </div>
+                    <div class="upload-result-container d-none">
+                        <div class="column-1">
+                            <img alt="Gif subido" class="uploaded-gif">
+                        </div>
+                        <div class="column-2">
+                            <b>Gifo creado con éxito</b>
+                            <a href="#" class="btn-xxl btn-simple copy-link">Copiar enlace Gifo</a>
+                            <a href="#" class="btn-xxl btn-simple download-gif">Descargar Gifo</a>
+                        </div>
                     </div>
                 </div>
                 <div class="create-gif-footer">
@@ -102,6 +139,12 @@
                             </div>
                             <a href="#" class="btn-simple btn-xl repeat-capture">Repetir Captura</a><!--
                          --><a href="#" class="btn-primary btn-xl upload-gif">Subir Gifo</a>
+                        </div>
+                        <div class="uploading-actions d-none">
+                            <a href="#" class="btn-xl btn-simple cancel-upload">Cancelar</a>
+                        </div>
+                        <div class="final-action d-none">
+                            <a href="#" class="btn-xl btn-primary finish-creation">Listo</a>
                         </div>
                     </div>
                     <input type="text" class="counter-input d-none" value="00:00:00:00" readonly>
