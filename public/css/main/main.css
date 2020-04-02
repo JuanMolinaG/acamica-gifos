@@ -393,6 +393,20 @@ img {
   height: 166px;
 }
 
+.container .related-tags {
+  margin-top: 12px;
+}
+
+.container .related-tags .btn-sm {
+  width: auto;
+  padding: 8px 7px;
+  pointer-events: none;
+}
+
+.container .related-tags .btn-sm + .btn-sm {
+  margin-left: 8px;
+}
+
 .container .suggested-section, .container .trends-section {
   padding-top: 64px;
 }

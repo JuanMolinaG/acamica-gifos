@@ -4,26 +4,27 @@ import dictionary from './helpers/dictionary.js';
 import Chronometer from './helpers/chrono.js';
 
 // Endpoint URLs
-let trendsUrl = 'https://api.giphy.com/v1/gifs/trending?rating=g';
-let searchTermUrl = 'https://api.giphy.com/v1/gifs/search?rating=G&lang=en';
-let searchIdsUrl = 'https://api.giphy.com/v1/gifs';
-let uploadUrl = 'https://upload.giphy.com/v1/gifs';
+let trendsUrl = 'https://api.giphy.com/v1/gifs/trending?rating=g',
+    searchTermUrl = 'https://api.giphy.com/v1/gifs/search?rating=G&lang=en',
+    searchIdsUrl = 'https://api.giphy.com/v1/gifs',
+    uploadUrl = 'https://upload.giphy.com/v1/gifs';
 
 // Variables
-let body = document.querySelector( 'body' );
-let themeChangerButton = document.querySelector( '.theme-changer' );
-let themeOptions = [ ...document.querySelector( '.theme-options' ).children ];
-let searchInput = document.querySelector( '.search-input' );
-let searchButton = document.querySelector( '.search-button' );
-let suggestedSearchsContainer = document.querySelector( '.suggested-searchs' );
-let suggestedSearchButtons = [ ...document.getElementsByClassName( 'btn-suggested' ) ];
-let apiRequest = new ApiRequests();
-let chronometer = new Chronometer();
-let gifBlob;
-let videoViewer = document.querySelector( '.video-viewer' );
-let gifPreviewer = document.querySelector( '.gif-previewer');
-let gifThumbnail;
-let uploadedGifData;
+let body = document.querySelector( 'body' ),
+    themeChangerButton = document.querySelector( '.theme-changer' ),
+    themeOptions = [ ...document.querySelector( '.theme-options' ).children ],
+    searchInput = document.querySelector( '.search-input' ),
+    searchButton = document.querySelector( '.search-button' ),
+    suggestedTerms,
+    suggestedSearchsContainer = document.querySelector( '.suggested-searchs' ),
+    suggestedSearchButtons = [ ...document.getElementsByClassName( 'btn-suggested' ) ],
+    apiRequest = new ApiRequests(),
+    chronometer = new Chronometer(),
+    gifBlob,
+    videoViewer = document.querySelector( '.video-viewer' ),
+    gifPreviewer = document.querySelector( '.gif-previewer'),
+    gifThumbnail,
+    uploadedGifData;
 var recorder;
 
 // Event listeners
@@ -60,10 +61,10 @@ function generalEvents() {
 function mainPageEvents() {
     searchInput.addEventListener( 'keyup', (e) => {
         if ( e.target.value.length > 2 ) {
-            let suggestedTerms = getSuggestedSearchs( e.target.value );
+            suggestedTerms = getSuggestedSearchs( e.target.value );
     
             suggestedSearchButtons.forEach( ( button, index ) => {
-                button.innerHTML = suggestedTerms[index];
+                button.innerHTML = suggestedTerms[ index ];
             });
             suggestedSearchsContainer.classList.add( 'active' );
             searchButton.classList.replace( 'btn-disabled', 'btn-primary' );
@@ -84,19 +85,19 @@ function mainPageEvents() {
     });
 }
 function myGifosPageEvents() {
-    let backButton = document.querySelector( '.back-button' );
-    let createGifButton = document.querySelector( '.start-creation' );
-    let cancelButton = document.querySelector( '.cancel-creation' );
-    let startRecordButton = document.querySelector( '.start-record-button' );
-    let stopRecordButton = document.querySelector( '.stop-record-button' );
-    let createGifTitle = document.querySelector( '.create-gif-container .title-bar span' );
-    let playPreviewButton = document.querySelector( '.preview-controls .btn-play' );
-    let repeatCaptureButton = document.querySelector( '.repeat-capture' );
-    let uploadGifButton = document.querySelector( '.upload-gif' );
-    let cancelUploadButton = document.querySelector( '.cancel-upload' );
-    let currentUrl = window.location.href;
-    let createGifContainer = document.querySelector( '.create-gif-container' );
-    let closeComponent = document.querySelector( '.create-gif-container .title-bar img' );
+    let backButton = document.querySelector( '.back-button' ),
+        createGifButton = document.querySelector( '.start-creation' ),
+        cancelButton = document.querySelector( '.cancel-creation' ),
+        startRecordButton = document.querySelector( '.start-record-button' ),
+        stopRecordButton = document.querySelector( '.stop-record-button' ),
+        createGifTitle = document.querySelector( '.create-gif-container .title-bar span' ),
+        playPreviewButton = document.querySelector( '.preview-controls .btn-play' ),
+        repeatCaptureButton = document.querySelector( '.repeat-capture' ),
+        uploadGifButton = document.querySelector( '.upload-gif' ),
+        cancelUploadButton = document.querySelector( '.cancel-upload' ),
+        currentUrl = window.location.href,
+        createGifContainer = document.querySelector( '.create-gif-container' ),
+        closeComponent = document.querySelector( '.create-gif-container .title-bar img' );
     
     if ( currentUrl.search( 'action=crearGifo' ) > 0 ) {
         createGifContainer.classList.remove( 'd-none' );
@@ -110,9 +111,9 @@ function myGifosPageEvents() {
 
     createGifButton.addEventListener( 'click', (e) => {
         e.preventDefault();
-        let createGifIcon = createGifContainer.querySelector( '.icon-container' );
-        let createGifText = createGifContainer.querySelector( '.text-container' );
-        let instructionsActions = document.querySelector( '.instructions-actions' );
+        let createGifIcon = createGifContainer.querySelector( '.icon-container' ),
+            createGifText = createGifContainer.querySelector( '.text-container' ),
+            instructionsActions = document.querySelector( '.instructions-actions' );
         createGifIcon.classList.add( 'd-none' );
         createGifText.classList.add( 'd-none' );
         instructionsActions.classList.add( 'd-none' );
@@ -124,7 +125,7 @@ function myGifosPageEvents() {
 
     cancelButton.addEventListener( 'click', (e) => {
         e.preventDefault();
-        window.location = './';
+        window.history.back();
     });
 
     startRecordButton.addEventListener( 'click', () => {
@@ -143,11 +144,11 @@ function myGifosPageEvents() {
 
     repeatCaptureButton.addEventListener( 'click', (e) => {
         e.preventDefault();
-        let previewGifActions = document.querySelector( '.preview-gif-actions' );
+        let previewGifActions = document.querySelector( '.preview-gif-actions' ),
+            counterInput = document.querySelector( '.counter-input' );
         previewGifActions.classList.add( 'd-none' );
         startRecordButton.classList.remove( 'waiting', 'd-none' );
         startRecordButton.querySelector( '.start-record' ).innerHTML = 'Capturar';
-        let counterInput = document.querySelector( '.counter-input' );
         counterInput.classList.add( 'd-none' );
         videoViewer.classList.remove( 'd-none' );
         gifPreviewer.classList.add( 'd-none' );
@@ -163,27 +164,27 @@ function myGifosPageEvents() {
     cancelUploadButton.addEventListener( 'click', (e) => {
         e.preventDefault();
         apiRequest.cancelPost();
-        window.location = './';
+        window.history.back();
     })
 
     closeComponent.addEventListener( 'click', () => {
-        window.location = './';
+        window.history.back();
     });
 }
 
 //Functions
 function getSuggestedSearchs( searchTerm ) {
     
-    let suggestedTerms = dictionary.filter( word => word.indexOf( searchTerm.toLowerCase() ) >= 0 );
+    let suggestions = dictionary.filter( word => word.indexOf( searchTerm.toLowerCase() ) >= 0 );
 
-    if ( suggestedTerms.length < 3 ) {
-        for ( let i = suggestedTerms.length; i < 3; i++ ) {
+    if ( suggestions.length < 3 ) {
+        for ( let i = suggestions.length; i < 3; i++ ) {
             let randomTerm = dictionary[ Math.floor( Math.random() * dictionary.length ) ];
-            suggestedTerms.push( randomTerm );
+            suggestions.push( randomTerm );
          }
     }
 
-    return suggestedTerms;
+    return suggestions;
 }
 
 async function setSuggestedGifs() {
@@ -194,9 +195,9 @@ async function setSuggestedGifs() {
             let suggestedItems = [ ...document.getElementsByClassName( 'suggested-item' ) ];
             suggestedItems.forEach( ( item, index ) => {
                 const { title, images:{ downsized_large:{ url } } } = suggestedGifs.data[index];
-                let shortTitle = title.split( " GIF" )[0];
-                let hashtagTitle = shortTitle.replace( / /g, '' );
-                let html = `<div class="title-bar">
+                let shortTitle = title.split( " GIF" )[0],
+                    hashtagTitle = shortTitle.replace( / /g, '' ),
+                    html = `<div class="title-bar">
                                 <span>#${ hashtagTitle }</span>
                                 <img src="./assets/img/close.svg" alt="">
                             </div>
@@ -222,12 +223,12 @@ async function setTrendGifs() {
 
     if ( trendGifs ) {
         if ( trendGifs.data.length > 0 ) {
-            let trendsContainer = document.querySelector( '.trends-container' );
-            let html = '';
+            let trendsContainer = document.querySelector( '.trends-container' ),
+                html = '';
             trendGifs.data.forEach(gif => {
                 const { title, images:{ downsized_large:{ url } } } = gif;
-                let shortTitle = title.split( "GIF" )[0].trim();
-                let hashtagTitle = shortTitle.replace( / /g, '' );
+                let shortTitle = title.split( "GIF" )[0].trim(),
+                    hashtagTitle = shortTitle.replace( / /g, '' );
                 html += `<div class="trend-item">
                             <img src="${ url }" alt="${ title }">
                             <div class="title-bar">
@@ -241,19 +242,28 @@ async function setTrendGifs() {
 }
 
 async function setSearchGifs( searchTerm ) {
-    let completeSearchUrl = `${ searchTermUrl }&q=${ searchTerm }&`;
-    let resultGifs = await apiRequest.fetchGet( completeSearchUrl, 20 );
-    let trendsTitle = document.querySelector( '.trends-section .title-input' );
-    let suggestedSection = document.querySelector( '.suggested-section ' );
+    let completeSearchUrl = `${ searchTermUrl }&q=${ searchTerm }&`,
+        resultGifs = await apiRequest.fetchGet( completeSearchUrl, 20 ),
+        trendsTitle = document.querySelector( '.trends-section .title-input' ),
+        suggestedSection = document.querySelector( '.suggested-section ' ),
+        relatedTagsContainer = document.querySelector( '.related-tags' ),
+        relatedTagsButtons = [ ...relatedTagsContainer.getElementsByClassName( 'btn-secondary' ) ];
+        console.log('relatedTagsButtons :', relatedTagsButtons);
+
+        relatedTagsButtons.forEach( ( button, index ) => {
+            button.innerHTML = `#${ suggestedTerms[ index ] }`;
+        });
+
+        relatedTagsContainer.classList.remove( 'd-none' );
     
     if ( resultGifs ) {
         if ( resultGifs.data.length > 0 ) {
-            let trendsContainer = document.querySelector( '.trends-container' );
-            let html = '';
+            let trendsContainer = document.querySelector( '.trends-container' ),
+                html = '';
             resultGifs.data.forEach(gif => {
                 const { title, images:{ downsized_large:{ url } } } = gif;
-                let shortTitle = title.split( "GIF" )[0].trim();
-                let hashtagTitle = shortTitle.replace( / /g, '' );
+                let shortTitle = title.split( "GIF" )[0].trim(),
+                    hashtagTitle = shortTitle.replace( / /g, '' );
                 html += `<div class="trend-item">
                             <img src="${ url }" alt="${ title }">
                             <div class="title-bar">
@@ -278,17 +288,17 @@ function searchRelatedGifs( gifTitle) {
 async function setMyGifos() {
     let myGifosIds = localStorage.getItem( 'my_gifos' );
     if ( myGifosIds ) {
-        let completeIdsUrl = `${ searchIdsUrl }?ids=${ myGifosIds }&`;
-        let myGifosResult = await apiRequest.fetchGet( completeIdsUrl );
+        let completeIdsUrl = `${ searchIdsUrl }?ids=${ myGifosIds }&`,
+            myGifosResult = await apiRequest.fetchGet( completeIdsUrl );
     
         if ( myGifosResult ) {
             if ( myGifosResult.data.length > 0 ) {
-                let myGifosContainer = document.querySelector( '.my-gifos-container' );
-                let html = '';
+                let myGifosContainer = document.querySelector( '.my-gifos-container' ),
+                    html = '';
                 myGifosResult.data.forEach(gif => {
                     const { title, images:{ downsized_large:{ url } } } = gif;
-                    let shortTitle = title.split( "GIF" )[0].trim();
-                    let hashtagTitle = shortTitle.replace( / /g, '' );
+                    let shortTitle = title.split( "GIF" )[0].trim(),
+                        hashtagTitle = shortTitle.replace( / /g, '' );
                     html += `<div class="trend-item">
                                 <img src="${ url }" alt="${ title }">
                                 <div class="title-bar">
@@ -303,8 +313,8 @@ async function setMyGifos() {
 }
 
 async function setVideoStream() {
-    let mediaContainer = document.querySelector( '.media-container' );
-    let videoSrc = await getStream();
+    let mediaContainer = document.querySelector( '.media-container' ),
+        videoSrc = await getStream();
 
     if ( videoSrc !== 'error' ) {
         mediaContainer.classList.remove( 'd-none' );
@@ -350,8 +360,8 @@ async function startRecord() {
         width: 450,
         hidden: 240,
         onGifRecordingStarted: () => {
-            let stopRecordButton = document.querySelector( '.stop-record-button' );
-            let counterInput = document.querySelector( '.counter-input' );
+            let stopRecordButton = document.querySelector( '.stop-record-button' ),
+                counterInput = document.querySelector( '.counter-input' );
 
             startRecordButton.classList.add( 'd-none' );
             stopRecordButton.classList.remove( 'd-none' );
@@ -372,8 +382,8 @@ function stopRecord() {
 }
 
 function showGifPreviewer(){
-    let previewGifActions = document.querySelector( '.preview-gif-actions' );
-    let stopRecordButton = document.querySelector( '.stop-record-button' );
+    let previewGifActions = document.querySelector( '.preview-gif-actions' ),
+        stopRecordButton = document.querySelector( '.stop-record-button' );
     previewGifActions.classList.remove( 'd-none' );
     stopRecordButton.classList.add( 'd-none' );
     videoViewer.classList.add( 'd-none' );
@@ -383,8 +393,8 @@ function showGifPreviewer(){
 }
 
 function playPreview(){
-    let progressBar = document.querySelector( '.preview-controls .progress-bar' );
-    let timeElapsed = chronometer.getTimeElapsed();
+    let progressBar = document.querySelector( '.preview-controls .progress-bar' ),
+        timeElapsed = chronometer.getTimeElapsed();
     progressBar.style.animation = `gradient-move ${timeElapsed/1000}s steps(17, start) 1`;
     gifPreviewer.src = URL.createObjectURL( gifBlob );
     chronometer.startCounter();
@@ -398,11 +408,11 @@ function playPreview(){
 }
 
 async function uploadGif(){
-    let mediaContainer = document.querySelector( '.media-container' );
-    let previewGifActions = document.querySelector( '.preview-gif-actions' );
-    let counterInput = document.querySelector( '.counter-input' );
-    let uploadingContainer = document.querySelector( '.uploading-container' );
-    let uploadingActions = document.querySelector( '.uploading-actions' );
+    let mediaContainer = document.querySelector( '.media-container' ),
+        previewGifActions = document.querySelector( '.preview-gif-actions' ),
+        counterInput = document.querySelector( '.counter-input' ),
+        uploadingContainer = document.querySelector( '.uploading-container' ),
+        uploadingActions = document.querySelector( '.uploading-actions' );
 
     mediaContainer.classList.add( 'd-none' );
     previewGifActions.classList.add( 'd-none' );
@@ -410,8 +420,8 @@ async function uploadGif(){
     uploadingContainer.classList.remove( 'd-none' );
     uploadingActions.classList.remove( 'd-none' );    
 
-    let form = new FormData();
-    let timestamp = new Date().getTime();
+    let form = new FormData(),
+        timestamp = new Date().getTime();
     form.append( 'file', gifBlob, `myGif-${timestamp}.gif` );
     
     uploadedGifData = await apiRequest.fetchPost( uploadUrl, form );
@@ -424,18 +434,18 @@ async function uploadGif(){
 }
 
 async function showUploadedGif(){
-    let uploadingContainer = document.querySelector( '.uploading-container' );
-    let uploadingActions = document.querySelector( '.uploading-actions' );
-    let uploadResult = document.querySelector( '.upload-result-container' );
-    let finalAction = document.querySelector( '.final-action' );
-    let uploadedGif = document.querySelector( '.uploaded-gif' );
-    let finishButton = document.querySelector( '.finish-creation' );
-    let createGifContainer = document.querySelector( '.create-gif-container' );
-    let createGifTitle = document.querySelector( '.create-gif-container .title-bar span' );
-    let getGifUrl = `${ searchIdsUrl }?ids=${ uploadedGifData.data.id }&`;
-    let newGifoData = await apiRequest.fetchGet( getGifUrl );
-    let copyLinkButton = document.querySelector( '.copy-link' );
-    let downloadGifButton = document.querySelector( '.download-gif' );
+    let uploadingContainer = document.querySelector( '.uploading-container' ),
+        uploadingActions = document.querySelector( '.uploading-actions' ),
+        uploadResult = document.querySelector( '.upload-result-container' ),
+        finalAction = document.querySelector( '.final-action' ),
+        uploadedGif = document.querySelector( '.uploaded-gif' ),
+        finishButton = document.querySelector( '.finish-creation' ),
+        createGifContainer = document.querySelector( '.create-gif-container' ),
+        createGifTitle = document.querySelector( '.create-gif-container .title-bar span' ),
+        getGifUrl = `${ searchIdsUrl }?ids=${ uploadedGifData.data.id }&`,
+        newGifoData = await apiRequest.fetchGet( getGifUrl ),
+        copyLinkButton = document.querySelector( '.copy-link' ),
+        downloadGifButton = document.querySelector( '.download-gif' );
 
     if ( newGifoData ) {
         if ( newGifoData.data.length > 0 ) {
