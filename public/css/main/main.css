@@ -296,11 +296,18 @@ img {
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
+  position: relative;
+}
+
+.nav-bar .back-button {
+  position: absolute;
+  left: -34px;
+  cursor: pointer;
 }
 
 .nav-bar .theme-changer {
   display: inline-block;
-  margin: 16px;
+  margin: 0 16px;
   position: relative;
 }
 

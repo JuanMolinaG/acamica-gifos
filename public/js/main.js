@@ -84,6 +84,7 @@ function mainPageEvents() {
     });
 }
 function myGifosPageEvents() {
+    let backButton = document.querySelector( '.back-button' );
     let createGifButton = document.querySelector( '.start-creation' );
     let cancelButton = document.querySelector( '.cancel-creation' );
     let startRecordButton = document.querySelector( '.start-record-button' );
@@ -99,7 +100,13 @@ function myGifosPageEvents() {
     
     if ( currentUrl.search( 'action=crearGifo' ) > 0 ) {
         createGifContainer.classList.remove( 'd-none' );
+        document.querySelector( '.nav-bar .navigation-container' ).classList.add( 'd-none' );
+        backButton.classList.remove( 'd-none' );
     }
+
+    backButton.addEventListener( 'click', () => {
+        window.history.back();
+    });
 
     createGifButton.addEventListener( 'click', (e) => {
         e.preventDefault();

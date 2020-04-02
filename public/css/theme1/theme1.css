@@ -65,6 +65,10 @@
   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.sailor-day .btn-simple:hover, .sailor-day .btn-simple:active {
+  background: #F0E5EE;
+}
+
 .sailor-day .theme-changer:hover > .btn-primary,
 .sailor-day .start-record-button:hover > .btn-primary {
   background: #E6BBE2;

@@ -31,9 +31,15 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    .back-button{
+        position: absolute;
+        left: -34px;
+        cursor: pointer;
+    }
     .theme-changer{
         display: inline-block;
-        margin: 16px;
+        margin: 0 16px;
         position: relative;
         &:hover > .btn-lg,
         &:hover > .btn-arrow{

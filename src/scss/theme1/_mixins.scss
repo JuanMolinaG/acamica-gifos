@@ -46,5 +46,8 @@
         background: #FFF4FD;
         border: 1px solid #110038;
         box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+        &:hover, &:active{
+            background: #F0E5EE;
+        }
     }
 }
