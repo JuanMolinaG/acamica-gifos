@@ -1,0 +1,104 @@
+@import '_variables.scss';
+@import 'mixins.scss';
+
+.sailor-night{
+    background-color: $body-color;
+    .top-bar{
+        @include top-bar(12px, $box-shadow: true, $bold: false);
+        margin: 1px 1px 35px 1px;
+        padding: 3px 7px;
+    }
+    .btn-primary{
+        @include button-type('primary');
+    }
+    .btn-secondary{
+        @include button-type('secondary');
+    }
+    .btn-recording{
+        @include button-type('recording');
+    }
+    .btn-disabled{
+        @include button-type('disabled');
+        & > img{
+            opacity: 0.2;
+        }
+    }
+    .btn-simple{
+        @include button-type('simple');
+    }
+    .btn-arrow > img,
+    .search-button > img,
+    .btn-camera > img,
+    .btn-play > img{
+        filter: invert(1);
+    }
+    .logo-container img{
+        content: url(../../assets/img/gifos_logo_dark.png);
+    }
+    .theme-changer:hover > .btn-primary,
+    .start-record-button:hover > .btn-primary{
+        background: #CE36DB;
+    }
+    .stop-record-button:hover > .btn-recording{
+        background: #D65C5C;
+    }
+    .my-gifos{
+        color: #FFFFFF;
+        &:hover{
+            outline: 1px dotted #FFFFFF;
+            outline-offset: 0px;
+            padding: 7px 19px 7px 1px;
+            margin: 0 -19px 0 -1px;
+        }
+    }
+        
+    .title-bar{
+        @include top-bar(14px, $box-shadow: false, $bold: true);
+        padding: 3px;
+    }
+    .container-box{
+        background: $box-bg;
+        box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+        .search-input{
+            border: 1px solid #979797;
+            box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+        }
+        .btn-full{
+            background: #CCCCCC;
+            border: 1px solid #808080;
+            box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+            &.active{
+                background: #2E32FB;
+                border: 1px solid rgba(51,53,143,0.20);
+                box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+                color: #FFFFFF;
+                pointer-events: none;
+                &::first-letter{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .title-input{
+        background: #FFFAFE;
+        border: 1px solid #2E32FB;
+        box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+    }
+    .trend-item:hover{
+        background: #B4B4B4;
+        box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+    }
+    .media-container .video-viewer,
+    .media-container .gif-previewer,
+    .counter-input,
+    .uploading-container,
+    .uploaded-gif{
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    }
+    .progress-bar{
+        background-image: linear-gradient(90deg, #EE3EFE 0%, #EE3EFE 50%, #999999 50%, #999999 100%);
+        box-shadow: inset -2px -2px 0 0 #FFFCFC, inset 2px 2px 0 0 #000000;
+    }
+}

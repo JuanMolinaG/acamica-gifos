@@ -1,0 +1,52 @@
+@mixin top-bar ($font-size, $box-shadow, $bold) {
+    background-image: linear-gradient(270deg, $primary-color 0%, $secondary-color 100%);
+    @if $box-shadow {
+        box-shadow: 0 1px 0 0 #110038;
+    }
+    span{
+        font-size: $font-size;
+        color: #FFF;
+        @if $bold {
+            font-weight: 700;
+        }
+    }
+}
+
+@mixin button-type( $type ) {
+    color: #FFFFFF;
+    @if $type == 'primary' {
+        background-color: $primary-color;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+        &:hover, &:active{
+            background: #CE36DB;
+        }
+    } @else if $type == 'secondary' {
+        background-color: $secondary-color;
+        border: 1px solid #4C2F99;
+        box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+        &:hover, &:active{
+            background: #2629CC;
+        }
+    } @else if $type == 'recording' {
+        background-color: $recording-color;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+        &:hover, &:active{
+            background: #D65C5C;
+        }
+    } @else if $type == 'disabled' {
+        background-color: $box-bg;
+        border: 1px solid #808080;
+        box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+        color: #8F8F8F;
+        pointer-events: none;
+    } @else if $type == 'simple' {
+        background: #110038;
+        border: 1px solid #B4B4B4;
+        box-shadow: inset -1px -1px 0 0 #5C5C5C, inset 1px 1px 0 0 #FFF4FD;
+        &:hover, &:active{
+            outline: 1px dotted #FFFFFF;
+        }
+    }
+}

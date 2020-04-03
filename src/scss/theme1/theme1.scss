@@ -26,9 +26,6 @@
     .btn-simple{
         @include button-type('simple');
     }
-    .btn-suggested{
-        @include button-type('suggested');
-    }
     .theme-changer:hover > .btn-primary,
     .start-record-button:hover > .btn-primary{
         background: #E6BBE2;
@@ -85,5 +82,9 @@
         background: #FFFFFF;
         border: 1px solid #979797;
         box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    }
+    .progress-bar{
+        background-image: linear-gradient(90deg, #f7c9f3 0%, #f7c9f3 50%, #999999 50%, #999999 100%);
+        box-shadow: inset -2px -2px 0 0 #FFFCFC, inset 2px 2px 0 0 #000000;
     }
 }

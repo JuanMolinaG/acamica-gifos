@@ -30,6 +30,7 @@ var recorder;
 // Event listeners
 document.addEventListener( 'DOMContentLoaded', () => {
     generalEvents();
+    setTheme();
     if ( body.classList.contains( 'main-page' ) ) {
         mainPageEvents();
         setSuggestedGifs();
@@ -47,13 +48,17 @@ function generalEvents() {
     themeOptions.forEach( ( option, index ) => {
         option.addEventListener( 'click', () => {
             if ( index == 0 ) {
-                body.classList.replace( 'sailor-night', 'sailor-day' );
+                // body.classList.replace( 'sailor-night', 'sailor-day' );
                 themeOptions[1].classList.remove( 'active' );
+                localStorage.setItem( 'theme_skin', 'sailor-day' );
+                setTheme();
             } else {
-                body.classList.replace( 'sailor-day', 'sailor-night' );
+                // body.classList.replace( 'sailor-day', 'sailor-night' );
                 themeOptions[0].classList.remove( 'active' );
+                localStorage.setItem( 'theme_skin', 'sailor-night' );
+                setTheme();
             }
-            option.classList.add( 'active' );
+            // option.classList.add( 'active' );
         })
     });
 }
@@ -165,7 +170,7 @@ function myGifosPageEvents() {
         e.preventDefault();
         apiRequest.cancelPost();
         window.history.back();
-    })
+    });
 
     closeComponent.addEventListener( 'click', () => {
         window.history.back();
@@ -173,6 +178,25 @@ function myGifosPageEvents() {
 }
 
 //Functions
+function setTheme(){
+    let userSelectedTheme = localStorage.getItem( 'theme_skin' );
+
+    if ( userSelectedTheme ) {
+        if ( userSelectedTheme == 'sailor-day' ) {
+            body.classList.add( 'sailor-day' );
+            body.classList.remove( 'sailor-night' );
+            themeOptions[0].classList.add( 'active' );
+        } else if ( userSelectedTheme == 'sailor-night' ) {
+            body.classList.add( 'sailor-night' );
+            body.classList.remove( 'sailor-day' );
+            themeOptions[1].classList.add( 'active' );
+        }
+    } else {
+        localStorage.setItem( 'theme_skin', 'sailor-day' );
+        setTheme();
+    }
+}
+
 function getSuggestedSearchs( searchTerm ) {
     
     let suggestions = dictionary.filter( word => word.indexOf( searchTerm.toLowerCase() ) >= 0 );

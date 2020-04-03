@@ -175,11 +175,8 @@
 
 .progress-bar {
   display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#f7c9f3), color-stop(50%, #f7c9f3), color-stop(50%, #999999), to(#999999));
-  background: linear-gradient(90deg, #f7c9f3 0%, #f7c9f3 50%, #999999 50%, #999999 100%);
   background-size: 200% 100%;
   background-position: 100% 200%;
-  box-shadow: inset -2px -2px 0 0 #FFFCFC, inset 2px 2px 0 0 #000000;
   padding: 2px 2px 0 2px;
   height: 24px;
 }
