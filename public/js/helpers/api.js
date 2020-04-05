@@ -1,7 +1,14 @@
+/**
+ * @description Clase con los métodos get y post para la API de Giphy
+ * @requires apiCredentials.js con el apiKey y username de Giphy
+ */
+
+import { apiKey, username } from './apiCredentials.js';
+
 export default class ApiRequests{
     constructor() {
-        this.apiKey = '98DZpP9iuSTg6FFtfqO3TV3X6MrQ0FDD';
-        this.username = 'juan-molina'
+        this.apiKey = apiKey;
+        this.username = username;
         this.controller = new AbortController();
         this.signal = this.controller.signal;
     }
