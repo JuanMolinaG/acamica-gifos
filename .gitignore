@@ -1,4 +1,5 @@
 **/node_modules/**
 public/assets/img/*
+public/js/helpers/apiCredentials.js
 **/.*
 firebase.json
