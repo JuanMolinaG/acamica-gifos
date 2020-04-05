@@ -1,3 +1,7 @@
+/**
+ * @description Dictionary based on Google's 2019 trend searchs
+ */
+
 let dictionary = [
     'about',
     'search',

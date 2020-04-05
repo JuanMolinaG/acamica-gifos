@@ -1,4 +1,6 @@
-// Chronometer based on https://www.proglogic.com/code/javascript/time/chronometer.php
+/**
+ * @description Chronometer based on https://www.proglogic.com/code/javascript/time/chronometer.php
+ */
 
 export default class Chronometer{
     constructor() {
